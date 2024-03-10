@@ -1,0 +1,101 @@
+<html>
+
+   <head>
+
+      <title>Luz ingá </title>
+
+   <script>
+
+       function Cadastro()  {
+
+         var nome_cliente =  document.getElementById("nome").value;
+
+         var endereco_cliente =  document.getElementById("endereco").value;
+
+         var cidade_cliente =  document.getElementById("cidade").value;
+ 
+         var telefone =  document.getElementById("telefone").value;
+
+         var desejo =  document.getElementById("desejo").value;
+
+         
+        var dadosajax = {
+
+            'nome_cliente': nome_cliente,
+
+            ‘endereco_cliente’: endereço_cliente,
+
+            ‘cidade_cliente’: cidade_cliente,
+
+            ‘telefone_cliente’: telefone_cliente
+
+            ‘desejo_cliente’: desejo_cliente
+
+         };
+         
+       var pageurl = grava_cliente.php';
+ 
+       $.ajax({
+
+            url: pageurl,
+
+            data: dadosajax,
+
+            type: 'POST',
+
+            cache: false,
+
+            error: function(XMLHttpRequest, textStatus, errorThrown)
+
+               {
+
+                  alert(“Erro Gravação Cliente!!”);
+
+               },
+
+            success: function(result)
+
+                {
+
+                   alert("Gravação Cliente efetuada com sucesso");
+
+                   return;
+
+                }
+
+         }
+
+         </script> 
+</head>
+
+   <body>
+
+      <h1>Cadastro de Clientes</h1><p></p>
+
+      <p>Inclua as informações do cliente abaixo</p>
+
+      <font> Nome do cliente: </font><p></p>
+
+      <input type=”text” id=”nome”></input><p></p>
+
+      <font> Endereço do cliente: </font><p></p>
+
+      <input type=”text” id=”endereco”></input><p></p>
+
+      <font> Cidade do cliente </font><p></p>
+
+      <input type=”text” id=”cidade”></input><p></p>
+
+      <font> Telefone do cliente: </font><p></p>
+
+      <input type=”tel” id=”telefone”></input><p></p>
+
+      <font> lista de desejos </font><p></p>
+
+      <input type=”text” id=”desejo”></input><p></p>
+
+       <input type="button" name="botao" value="Cadastrar" id=”botao_cadastra” onClick=”Cadastro()>
+
+   </body>
+
+</html>
